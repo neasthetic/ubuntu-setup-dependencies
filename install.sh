@@ -115,7 +115,7 @@ ensure_mongodb_repo() {
 
   if [[ ! -f /etc/apt/sources.list.d/mongodb-org-7.0.list ]]; then
     echo -e "${BLUE}[+] Adicionando repositório do MongoDB...${NC}"
-    echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] https://repo.mongodb.org/apt/ubuntu $(lsb_release -cs)/mongodb-org/7.0 multiverse" | ${SUDO} tee /etc/apt/sources.list.d/mongodb-org-7.0.list >/dev/null
+    echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/7.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list >/dev/null
     UPDATED_APT=0
   else
     echo -e "${GREEN}[-] Repositório do MongoDB já configurado${NC}"
